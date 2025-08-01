@@ -7,7 +7,7 @@ A powerful and flexible boilerplate for building intelligent AI-powered chatbots
 The Pawa AI Custom Bots Template is a comprehensive solution that enables you to:
 
 ### Core Features
-- ** RAG-Based AI Chatbots**: Build intelligent bots that can retrieve and generate responses using your custom knowledge base
+- #### RAG-Based AI Chatbots: Build intelligent bots that can retrieve and generate responses using your custom knowledge base
 - ***Text-to-Speech (TTS)***: Convert bot responses into natural-sounding speech for voice interactions
 - ***Speech-to-Text (STT)***: Enable voice input from users, making your bot accessible through spoken commands
 - ***Custom Knowledge Base***: Upload and integrate your own documents, FAQs, and data sources
