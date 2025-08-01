@@ -1,0 +1,152 @@
+/* Avenir Font Family Definitions */
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Light.woff2') format('woff2'),
+       url('/fonts/Avenir-Light.woff') format('woff'),
+       url('/fonts/Avenir-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-LightOblique.woff2') format('woff2'),
+       url('/fonts/Avenir-LightOblique.woff') format('woff'),
+       url('/fonts/Avenir-LightOblique.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Roman.woff2') format('woff2'),
+       url('/fonts/Avenir-Roman.woff') format('woff'),
+       url('/fonts/Avenir-Roman.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Oblique.woff2') format('woff2'),
+       url('/fonts/Avenir-Oblique.woff') format('woff'),
+       url('/fonts/Avenir-Oblique.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Book.woff2') format('woff2'),
+       url('/fonts/Avenir-Book.woff') format('woff'),
+       url('/fonts/Avenir-Book.ttf') format('truetype');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-BookOblique.woff2') format('woff2'),
+       url('/fonts/Avenir-BookOblique.woff') format('woff'),
+       url('/fonts/Avenir-BookOblique.ttf') format('truetype');
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Medium.woff2') format('woff2'),
+       url('/fonts/Avenir-Medium.woff') format('woff'),
+       url('/fonts/Avenir-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-MediumOblique.woff2') format('woff2'),
+       url('/fonts/Avenir-MediumOblique.woff') format('woff'),
+       url('/fonts/Avenir-MediumOblique.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Heavy.woff2') format('woff2'),
+       url('/fonts/Avenir-Heavy.woff') format('woff'),
+       url('/fonts/Avenir-Heavy.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-HeavyOblique.woff2') format('woff2'),
+       url('/fonts/Avenir-HeavyOblique.woff') format('woff'),
+       url('/fonts/Avenir-HeavyOblique.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Black.woff2') format('woff2'),
+       url('/fonts/Avenir-Black.woff') format('woff'),
+       url('/fonts/Avenir-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-BlackOblique.woff2') format('woff2'),
+       url('/fonts/Avenir-BlackOblique.woff') format('woff'),
+       url('/fonts/Avenir-BlackOblique.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Legacy font family names for compatibility */
+@font-face {
+  font-family: 'Avenir-Light';
+  src: url('/fonts/Avenir-Light.woff2') format('woff2'),
+       url('/fonts/Avenir-Light.woff') format('woff'),
+       url('/fonts/Avenir-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir-Medium';
+  src: url('/fonts/Avenir-Medium.woff2') format('woff2'),
+       url('/fonts/Avenir-Medium.woff') format('woff'),
+       url('/fonts/Avenir-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir-Heavy';
+  src: url('/fonts/Avenir-Heavy.woff2') format('woff2'),
+       url('/fonts/Avenir-Heavy.woff') format('woff'),
+       url('/fonts/Avenir-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} 
