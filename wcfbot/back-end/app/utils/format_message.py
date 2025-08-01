@@ -27,6 +27,9 @@ async def msg_to_pawa_chat(
         dict: The formatted message ready for the Pawa AI chat API.
     """
     
+    
+    print(files)
+    
     extraction_result_ = None
     if files:
         extraction_result_ = await send_files_to_extraction_server(files)
