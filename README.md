@@ -8,10 +8,10 @@ The Pawa AI Custom Bots Template is a comprehensive solution that enables you to
 
 ### Core Features
 - ** RAG-Based AI Chatbots**: Build intelligent bots that can retrieve and generate responses using your custom knowledge base
-- *** Text-to-Speech (TTS)**: Convert bot responses into natural-sounding speech for voice interactions
-- *** Speech-to-Text (STT)**: Enable voice input from users, making your bot accessible through spoken commands
-- *** Custom Knowledge Base**: Upload and integrate your own documents, FAQs, and data sources
-- *** Flexible Configuration**: Easy-to-customize bot logic, personality, and voice settings
+- ***Text-to-Speech (TTS)***: Convert bot responses into natural-sounding speech for voice interactions
+- ***Speech-to-Text (STT)***: Enable voice input from users, making your bot accessible through spoken commands
+- ***Custom Knowledge Base***: Upload and integrate your own documents, FAQs, and data sources
+- ***Flexible Configuration***: Easy-to-customize bot logic, personality, and voice settings
 
 ### Use Cases
 This template is perfect for building:
@@ -267,9 +267,9 @@ We welcome contributions! Please see our [Contributing Guide](README..md) for mo
 
 If you encounter any issues or have questions, please reach out through the following channels:
 
-- **Report Issues**: [GitHub Issues](https://github.com/Sartify/pawa-ai-blueprints-chatbots.git)    
-- **Email Support**: [support@pawaai.com](info@sartify.com)  
-- **Phone Number**: [PhoneNumber]((255) 612-704807)
+- **Report Issues**:https://github.com/Sartify/pawa-ai-blueprints-chatbots.git)   
+- **Email Support**: info@sartify.com
+- **Phone Number**: (255) 612-704807
 
 We’re here to help and welcome your feedback!
 
