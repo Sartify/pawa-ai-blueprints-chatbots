@@ -142,5 +142,113 @@
         "text": "I am sorry, but the provided text does not contain information about when WCF (Workers Compensation Fund) was established. It focuses on its functions, contributions, benefits, and target groups."
       }
     ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "WCF imeanzishwa lini ?"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "WCF ilianza rasmi tarehe 1 Julai 2015."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Hello wcf"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "Habari! Karibu. Naitwa WCF Agent, msaidizi wako wa kirafiki aliyeundwa kusaidia maswali na changamoto zinazohusiana na WCF (Mfuko wa Fidia kwa Wafanyakazi) nchini Tanzania. \n\nJe, una swali gani kuhusu WCF?"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "hello"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "Habari! Karibu. Naitwa WCF Agent, msaidizi wako wa kirafiki kuhusu Mfuko wa Fidia kwa Wafanyakazi (WCF) nchini Tanzania. \n\nJe, una swali lolote kuhusu WCF?"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "hello"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "Habari! Karibu. Naitwa WCF Agent, msaidizi wako wa kirafiki kuhusu Mfuko wa Fidia kwa Wafanyakazi (WCF) nchini Tanzania. \n\nJe, una swali lolote kuhusu WCF?"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "WCF imeanzishwa lini ?"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "WCF ilianza rasmi tarehe 1 Julai 2015."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "WCF imeanzishwa lini ?"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "WCF (Mfuko wa Fidia kwa Wafanyakazi) ilianzishwa mnamo tarehe 1 Julai, 2016."
+      }
+    ]
   }
 ]

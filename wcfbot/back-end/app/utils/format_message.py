@@ -120,7 +120,7 @@ async def msg_to_pawa_chat(
 #     }   
 # ,
 #         ],
-        # "memoryChat": memory_data if os.getenv("IS_MEMORY_ENABLED", "True").lower() == "true" else [],
+        "memoryChat": memory_data if os.getenv("IS_MEMORY_ENABLED", "True").lower() == "true" else [],
         "stream": is_streaming,
         "temperature": float(os.getenv("TEMPERATURE", 0.1)),
         "top_p": float(os.getenv("TOP_P", 0.95)),
