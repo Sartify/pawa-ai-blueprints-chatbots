@@ -10,6 +10,7 @@ import yaml
 from dotenv import load_dotenv
 load_dotenv(override=True)
 
+
 with open("app/engine/config.yaml", "r") as file:
     config = yaml.safe_load(file)
 
