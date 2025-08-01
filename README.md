@@ -144,7 +144,7 @@ We welcome contributions! Please see our (pawa-ai-blueprints-chatbots/wcfbot/bac
 
 - **PAWA AI** – for providing powerful models for chat, speech-to-text, text-to-speech, and creating vectore store.
 - **FastAPI** – for the lightweight, high-performance backend framework.
-- **Open-source libraries** – for enabling document processing, vector storage, and voice features.
+- **Open-source libraries** – for enabling document processing, and voice features.
 - **The developer community** – for continuous inspiration, reusable tools, and shared knowledge.
 
 ##  Support
