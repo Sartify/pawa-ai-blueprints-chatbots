@@ -104,17 +104,17 @@ This project leverages a modern AI-powered stack, integrating language and speec
 
 Before you begin, make sure you have the following installed and ready:
 
-- *** Python 3.8+**  
+- *** Python 3.8+ ***  
   Required for running the FastAPI backend, including RAG and speech processing logic.
 
-- *** Node.js 16+ and npm or yarn**  
+- *** Node.js 16+ and npm or yarn ***  
   Needed if you're using the optional NestJS frontend. Choose one package manager (either `npm` or `yarn`).
 
-- *** API Keys**  
+- *** API Keys ***  
   - **PAWA AI Chat API Key** – used to access the chatbot model (`pawa-v1-blaze-20250318`)
   - **TTS/STT API Key** – for voice features (Text-to-Speech and Speech-to-Text via PAWA AI)
 
-- *** Basic Knowledge of**:
+- *** Basic Knowledge of ***:
   - **Python** – to work with backend logic, FastAPI, and utilities
   - **TypeScript** – to understand and customize the frontend (if applicable)
   - **REST APIs** – to connect and test backend endpoints
@@ -168,7 +168,7 @@ If you encounter any issues or have questions, please reach out through the foll
 
 We’re here to help and welcome your feedback!
 
-Ready to build your intelligent AI bot? Get started now and create amazing conversational experiences! 
+**Ready to build your intelligent AI bot?** Get started now and create amazing conversational experiences! 
 ## 📞 Support
 
 - **Documentation**: [Link to full docs]
