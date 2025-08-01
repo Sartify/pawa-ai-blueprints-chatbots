@@ -1,10 +1,10 @@
 Chat:
-  Base_URL: "http://localhost:4000"
+  Base_URL: "https://staging.api.pawa-ai.com/"
   Endpoint: "/v1/chat/request"
   Memory_Path: "app/engine/memory.json"
 
 STORE:
-  Base_URL: "http://localhost:4000"
+  Base_URL: "https://staging.api.pawa-ai.com/"
   Endpoint: "/v1/store/knowledge-base"
   Name: "Workers Compensation Fund Knowledge Base"
   Description: "A Knowledge Base for WCF (Workers Compensation FUnd), containing information about the WCF (Workers Compensation FUnd).Use this knowledge base to answer questions about WCF (Workers Compensation Fund)."
