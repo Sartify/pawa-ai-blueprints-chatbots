@@ -157,4 +157,4 @@ If you encounter any issues or have questions, please reach out through the foll
 
 We’re here to help and welcome your feedback!
 
-**Ready to build your intelligent AI bot?** Get started now and create amazing conversational experiences! 🚀
+**Ready to build your intelligent AI bot?** Get started now and create amazing conversational experiences! 
