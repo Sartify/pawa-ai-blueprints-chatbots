@@ -117,7 +117,7 @@ Before you begin, make sure you have the following installed and ready:
 
 >  **Note**: Do not commit your actual API keys to version control. Use a `.env` file and share a `.env.example` instead.
 
-## 🚀 Quick Start
+##  Quick Start for wcf bot
 
 ### 1. Clone the Repository
 ```bash
@@ -145,7 +145,7 @@ npm install
 yarn install
 ```
 
-### 🔧 3. Configure Environment
+### 3. Configure Environment
 
 First, copy the example environment file:
 
@@ -206,7 +206,7 @@ python generate_kb.py
 
 Next Step:
 Copy the kbReferenceId output from the script and paste it into your .env file under:
-
+```
 ### 5. Run the Application
   ***Start the Backend (FastAPI)***
 ```bash
@@ -215,9 +215,8 @@ cd backend
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 # or
 python3 main.py
-``
-
-***Start the Frontend (NestJS):***
+```
+  ***Start the Frontend (NestJS):***
 ```bash
 cd wcfbot
 cd frontend
