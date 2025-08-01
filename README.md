@@ -43,7 +43,7 @@ This project leverages a modern AI-powered stack, integrating language and speec
 ### **AI/ML (Conversational Intelligence)**
 
 - **Chat Model (RAG)**:
-   - **CHAT_MODEL** = "pawa-v1-blaze-20250318"
+   - **CHAT_MODEL** = 'pawa-v1-blaze-20250318, 'pawa-v1-ember-20240924'
 
     - **API**: 'https://ai.api.pawa-ai.com/v1/chat/completions'
 
@@ -58,7 +58,14 @@ This project leverages a modern AI-powered stack, integrating language and speec
         - Supports long-form conversations and document referencing
 
 
----
+### **Vector Embeddings**
+
+- **Model**: `pawa-embedding-v1-20240701`
+- **API**: `https://staging.api.pawa-ai.com/v1/vectors/embedding`
+- **Features**:
+  - Language: `multi` (multilingual support)
+  - Accepts `sentences[]` as input for dense vector generation
+  - Use case: document chunk embedding for semantic search and RAG indexing
 
 ### **Speech Processing**
 
