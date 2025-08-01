@@ -9,6 +9,7 @@ from typing import List, Optional
 from fastapi import File, UploadFile
 from dotenv import load_dotenv
 load_dotenv(override=True)
+from fastapi import Form
 
 chat_router = r = APIRouter()
 logger = logging.getLogger("uvicorn")

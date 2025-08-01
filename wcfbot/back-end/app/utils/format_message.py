@@ -27,6 +27,9 @@ async def msg_to_pawa_chat(
         dict: The formatted message ready for the Pawa AI chat API.
     """
     
+    
+    print(files)
+    
     extraction_result_ = None
     if files:
         extraction_result_ = await send_files_to_extraction_server(files)
@@ -120,7 +123,7 @@ async def msg_to_pawa_chat(
 #     }   
 # ,
 #         ],
-        "memoryChat": memory_data if os.getenv("IS_MEMORY_ENABLED", "True").lower() == "true" else [],
+        # "memoryChat": memory_data if os.getenv("IS_MEMORY_ENABLED", "True").lower() == "true" else [],
         "stream": is_streaming,
         "temperature": float(os.getenv("TEMPERATURE", 0.1)),
         "top_p": float(os.getenv("TOP_P", 0.95)),

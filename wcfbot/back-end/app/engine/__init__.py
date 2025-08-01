@@ -60,8 +60,6 @@ async def inference_pawa_chat_stream(complete_message: dict,  request:UserReques
                             }
                         }) + "\n"
                             
-                   
-                        
                 from_assitant= complete_message
                 from_user=request.message
                 user_entry = format_message("user", from_user)
