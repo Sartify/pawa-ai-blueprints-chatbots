@@ -1,0 +1,35 @@
+Chat:
+  Base_URL: "http://localhost:4000"
+  Endpoint: "/v1/chat/request"
+  Memory_Path: "app/engine/memory.json"
+
+STORE:
+  Base_URL: "http://localhost:4000"
+  Endpoint: "/v1/store/knowledge-base"
+  Name: "Workers Compensation Fund Knowledge Base"
+  Description: "A Knowledge Base for WCF (Workers Compensation FUnd), containing information about the WCF (Workers Compensation FUnd).Use this knowledge base to answer questions about WCF (Workers Compensation Fund)."
+  FOLDER_PATH : "./data"
+
+Extraction:
+  Base_URL: "https://ai.api.pawa-ai.com"
+  Endpoint: "/v1/extract/document-extract"
+
+BUILT_IN_TOOLS:
+  - name: web_search_tool
+
+Tools:
+  - type: function
+    function:
+      name: convert_usd_to_tsh
+      description: "Converts an amount in USD to Tanzanian Shillings."
+      strict: true
+      parameters:
+        type: object
+        properties:
+          amount_usd:
+            description: "Amount in USD"
+            type: number
+        required:
+          - amount_usd
+        additionalProperties: false
+    
