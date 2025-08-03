@@ -4,11 +4,21 @@ from app.utils.format_message import msg_to_pawa_chat
 import yaml
 import httpx
 import os
+<<<<<<< HEAD
 import json
 from typing import AsyncGenerator, Union, List, Optional
 from fastapi import File, UploadFile
 from app.utils.format_memory import format_message
 from app.utils.tool_excuter import handle_tool_calls
+=======
+from typing import AsyncGenerator, Union
+from fastapi import HTTPException, status
+import httpx
+import json
+from typing import List, Optional
+from fastapi import File, UploadFile
+from app.utils.format_memory import format_message
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f
 from dotenv import load_dotenv
 load_dotenv(override=True)
 
@@ -20,8 +30,12 @@ ENDPOINT = config["Chat"]["Endpoint"]
 url = f"{BASE_UL}{ENDPOINT}"
 MEMORY_PATH = "app/engine/memory.json"
 
+<<<<<<< HEAD
 
 async def inference_pawa_chat_stream(complete_message: dict, request: UserRequest) -> AsyncGenerator[str, None]:
+=======
+async def inference_pawa_chat_stream(complete_message: dict,  request:UserRequest) -> AsyncGenerator[str, None]:
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f
     try:
         async with httpx.AsyncClient(timeout=300) as client:
             async with client.stream(
@@ -41,6 +55,7 @@ async def inference_pawa_chat_stream(complete_message: dict, request: UserReques
                         detail=body.decode() or "Streaming failed"
                     )
                 
+<<<<<<< HEAD
                 complete_response_message = ""
                 tool_calls = []
                 
@@ -133,13 +148,41 @@ async def inference_pawa_chat_stream(complete_message: dict, request: UserReques
                 from_user = request.message
                 user_entry = format_message("user", from_user)
                 assistant_entry = format_message("assistant", from_assistant)
+=======
+                complete_message = ""
+                async for line in response.aiter_lines():
+                    if line.strip():
+                        data = json.loads(line.strip())
+                        if data['data']['request'][0]['finish_reason']=="tool_calls":
+                            print("Tool calls detected, skipping...")
+                            continue
+                            
+                        else:
+                            content = data['data']['request'][0]['message']['content']
+                            complete_message += content
+                            yield json.dumps({
+                            "message": {
+                                "role": "assistant",
+                                "content": content
+                            }
+                        }) + "\n"
+                            
+                from_assitant= complete_message
+                from_user=request.message
+                user_entry = format_message("user", from_user)
+                assistant_entry = format_message("assistant", from_assitant)
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f
                 
                 try:
                     if os.path.exists(MEMORY_PATH):
                         with open(MEMORY_PATH, "r", encoding="utf-8") as f:
                             memory_data = json.load(f)
                     else:
+<<<<<<< HEAD
                         memory_data = []
+=======
+                            memory_data = []
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f
                 except Exception:
                     memory_data = []
                 
@@ -154,7 +197,11 @@ async def inference_pawa_chat_stream(complete_message: dict, request: UserReques
             detail="Failed to connect to the Pawa AI backend."
         )
 
+<<<<<<< HEAD
 async def inference_pawa_chat_non_stream(complete_message: dict, request: UserRequest) -> dict:
+=======
+async def inference_pawa_chat_non_stream(complete_message: dict, request:UserRequest) -> dict:
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f
     try:
         async with httpx.AsyncClient(timeout=300) as client:
             response = await client.post(
@@ -184,6 +231,7 @@ async def inference_pawa_chat_non_stream(complete_message: dict, request: UserRe
             status_code=response.status_code,
             detail=response_json.get("detail", "An error occurred")
         )
+<<<<<<< HEAD
     
     # Check if response contains tool calls
     finish_reason = response_json['data']['request'][0]['finish_reason']
@@ -227,6 +275,14 @@ async def inference_pawa_chat_non_stream(complete_message: dict, request: UserRe
 
     user_entry = format_message("user", from_user)
     assistant_entry = format_message("assistant", from_assistant)
+=======
+        
+    from_assitant=response_json['data']['request'][0]['message']['content']
+    from_user=request.message
+
+    user_entry = format_message("user", from_user)
+    assistant_entry = format_message("assistant", from_assitant)
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f
     
     try:
         if os.path.exists(MEMORY_PATH):
@@ -247,12 +303,21 @@ async def inference_pawa_chat_non_stream(complete_message: dict, request: UserRe
 async def pawa_chat_non_streaming(request: UserRequest, files: Optional[List[UploadFile]] = None) -> dict:
     try:
         complete_message = await msg_to_pawa_chat(request, files, is_streaming=False)
+<<<<<<< HEAD
         # print("Request payload:", json.dumps(complete_message, indent=2))
         response = await inference_pawa_chat_non_stream(complete_message, request)
         return response
     except Exception as e:
         print(f"Error in pawa_chat_non_streaming: {e}")
         raise HTTPException(
+=======
+        print(complete_message)
+        response = await inference_pawa_chat_non_stream(complete_message, request)
+        return response
+    except Exception as e:
+        raise HTTPException(
+            print(f"Error in pawa_chat_non_streaming: {e}"), 
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f
             status_code=500,
             detail="An error occurred while processing a non streaming request"
         ) from e
@@ -260,10 +325,18 @@ async def pawa_chat_non_streaming(request: UserRequest, files: Optional[List[Upl
 async def pawa_chat_streaming(request: UserRequest, files: Optional[List[UploadFile]] = None):
     try:
         complete_message = await msg_to_pawa_chat(request, files, is_streaming=True)
+<<<<<<< HEAD
         # print("Streaming request payload:", json.dumps(complete_message, indent=2))
+=======
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f
         return inference_pawa_chat_stream(complete_message, request) 
     except Exception as e:
         raise HTTPException(
             status_code=500,
             detail="An error occurred while processing a streaming request"
+<<<<<<< HEAD
         ) from e
+=======
+        ) from e
+
+>>>>>>> ee4d4a7404b387eae5e0196fae5ecb337fc55c9f

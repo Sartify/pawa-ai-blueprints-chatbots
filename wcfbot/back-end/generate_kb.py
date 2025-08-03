@@ -10,6 +10,7 @@ import yaml
 from dotenv import load_dotenv
 load_dotenv(override=True)
 
+
 with open("app/engine/config.yaml", "r") as file:
     config = yaml.safe_load(file)
 
@@ -41,6 +42,7 @@ async def send_documents():
                                              "Authorization": f"Bearer {os.getenv('PAWA_AI_API_KEY')}"}, 
                                          data=data, 
                                          files=files_to_upload)
+            
     except httpx.RequestError:
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
