@@ -1,0 +1,48 @@
+Chat:
+  Base_URL: "https://staging.api.pawa-ai.com"
+  Endpoint: "/v1/chat/request"
+  Memory_Path: "app/engine/memory.json"
+
+STORE:
+  Base_URL: "https://staging.api.pawa-ai.com"
+  Endpoint: "/v1/store/knowledge-base"
+  Name: "Workers Compensation Fund Knowledge Base"
+  Description: "A Knowledge Base for WCF (Workers Compensation FUnd), containing information about the WCF (Workers Compensation FUnd).Use this knowledge base to answer questions about WCF (Workers Compensation Fund)."
+  FOLDER_PATH: "./data"
+
+Extraction:
+  Base_URL: "https://ai.api.pawa-ai.com"
+  Endpoint: "/v1/extract/document-extract"
+
+BUILT_IN_TOOLS:
+  - name: web_search_tool
+
+Tools:
+  - type: function
+    function:
+      name: convert_usd_to_tsh
+      description: "Converts an amount in USD to Tanzanian Shillings."
+      strict: true
+      parameters:
+        type: object
+        properties:
+          amount_usd:
+            description: "Amount in USD"
+            type: number
+        required:
+          - amount_usd
+        additionalProperties: false
+
+  - type: function
+    function:
+      name: get_current_datetime
+      description: "Returns the current date and time in a specified format."
+      strict: true
+      parameters:
+        type: object
+        properties:
+          date_format:
+            description: "The format string to use for formatting the current date and time. Default is '%Y-%m-%d %H:%M:%S'."
+            type: string
+        required: []
+        additionalProperties: false
