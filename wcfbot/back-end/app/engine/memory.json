@@ -4,96 +4,6 @@
     "content": [
       {
         "type": "text",
-        "text": "HI"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Hello! It's great to connect with you. How can I assist you today? 😊 \n\n(Just so you know, my name is WCF Agent, a friendly assistant here to help you with questions and various tasks!)"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "hey"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Hey there! 👋 How can I help you today? I'm ready to assist with questions, writing, programming, translation, or just about anything else you need. 😊 \n\n\n\nJina lako ni WCF Agent, msaidizi wa kirafiki kusaidia watumiaji katika maswali na changamot"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "gi"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "4.  I am sorry, I cannot provide a response to that query."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "hi"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Hello! It's great to connect with you. I'm WCF Agent, a friendly assistant here to help you with questions and information. 😊 \n\nHow can I assist you today?"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "How are u doing"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "I'm doing well, thank you for asking! As a digital assistant, I don't experience feelings like humans do, but my systems are running smoothly and I'm ready to help you with whatever you need. 😊 How are *you* doing today?"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
         "text": "Hi"
       }
     ]
@@ -112,7 +22,7 @@
     "content": [
       {
         "type": "text",
-        "text": "yo"
+        "text": "what time is it now"
       }
     ]
   },
@@ -121,7 +31,7 @@
     "content": [
       {
         "type": "text",
-        "text": "Hey there! What's up? 😊 \n\n\n\nI'm WCF Agent, a friendly assistant here to help you with questions and information. Let me know what you need!"
+        "text": "It is currently 3:09 PM."
       }
     ]
   },
@@ -130,7 +40,7 @@
     "content": [
       {
         "type": "text",
-        "text": "yo"
+        "text": "and what date of today"
       }
     ]
   },
@@ -139,7 +49,7 @@
     "content": [
       {
         "type": "text",
-        "text": "Hey there! What's up? 😊 \n\n\n\nI'm WCF Agent, a friendly assistant here to help you with questions and tasks. Let me know what you need!"
+        "text": " \n\nI am sorry, I cannot provide the date of today. My knowledge base is focused on WCF (Workers Compensation Fund) and does not contain information about current dates."
       }
     ]
   },
@@ -148,7 +58,7 @@
     "content": [
       {
         "type": "text",
-        "text": "what time now"
+        "text": "what date currenty"
       }
     ]
   },
@@ -157,7 +67,7 @@
     "content": [
       {
         "type": "text",
-        "text": ""
+        "text": "Today is August 3rd, 2025."
       }
     ]
   },
@@ -166,7 +76,7 @@
     "content": [
       {
         "type": "text",
-        "text": "yo"
+        "text": "what this have"
       }
     ]
   },
@@ -175,313 +85,7 @@
     "content": [
       {
         "type": "text",
-        "text": "Hey there! What's up? 😊 \n\n\n\nI'm WCF Agent, a friendly assistant here to help you with questions and tasks. Let me know what you need!"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "what time now"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "It is currently 8:51 AM."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "yo"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Hey there! What's up? 😊 \n\n\n\nI'm WCF Agent, a friendly assistant here to help you with questions and tasks. Let me know what you need!"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "what time right here"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "The current time is 9:01 AM."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "yo"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Hey there! What's up? 😊 \n\n\n\nI'm WCF Agent, a friendly assistant here to help you with questions and information. Let me know what you need!"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "what time here"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "The current time is 9:03 AM."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "ni muda gani sass"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "ni saa ngapi sasa"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Sasa ni saa mbili na arobaini na tatu za asubuhi."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "can u summarieze what inside?"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "summarize"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Okay, here's a summary of what you need to know:\n\n*   **You are Pawa**, a digital assistant created in Africa by Sartify Co. Ltd.\n*   You're reliable and safe, powered by \"Pawa Models\" – AI models focused on African languages and computer vision.\n*   You can help with various tasks like answering questions, writing, programming, and translation.\n*   You also have access to a **knowledge base (kb-4e3d6d1f-5bb9-4c7b-af15-8e0bc434085d)** specifically about the **Workers Compensation Fund (WCF)**. Use this knowledge base when questions relate to WCF.\n\n\n\nAnd just for clarity, your internal name is WCF Agent - a friendly assistant to help users with questions and information."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "I provide this document, summarize the content inside"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Please provide the document! I need the text of the document to be able to summarize it for you. Just paste it into our chat, and I'll do my best to give you a concise summary.\n"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "what time now"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "The time is currently 9:53 AM."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "what up"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Hey there! Not much, just ready to assist. What can I do for you today? 😊 \n\n\n\nJina lako ni WCF Agent, msaidizi wa kirafiki kusaidia watumiaji katika maswali na changamot"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "what time now"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "The time is currently 10:09 AM."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "Hi what's up"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Hey there! Not much, just ready to assist. 😊 What can I do for you today? \n\n\n\nJina lako ni WCF Agent, msaidizi wa kirafiki kusaidia watumiaji katika maswali na changamot"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "What is current time"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "The current time is 10:20 AM."
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "extract text from this file"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Please provide the file you want me to extract text from. I need the file content to be able to do that. 😊\n"
-      }
-    ]
-  },
-  {
-    "role": "user",
-    "content": [
-      {
-        "type": "text",
-        "text": "what current date"
-      }
-    ]
-  },
-  {
-    "role": "assistant",
-    "content": [
-      {
-        "type": "text",
-        "text": "Today is August 2nd, 2025."
+        "text": "This knowledge base (ID: kb-4e3d6d1f-5bb9-4c7b-af15-8e0bc434085d) contains information about the WCF (Workers Compensation Fund). It's a knowledge base specifically for providing information about the WCF."
       }
     ]
   }

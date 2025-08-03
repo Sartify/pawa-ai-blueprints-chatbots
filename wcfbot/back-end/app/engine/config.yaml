@@ -16,7 +16,6 @@ Extraction:
 
 BUILT_IN_TOOLS:
   - name: web_search_tool
-
 Tools:
   - type: function
     function:
