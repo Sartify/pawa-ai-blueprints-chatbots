@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzania Vision 2050 Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 900px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #00a86b 0%, #228b22 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .chat-container {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-message { text-align: right; }
+
+        .user-message .message-bubble {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 20px 20px 5px 20px;
+            display: inline-block;
+            max-width: 70%;
+            box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .assistant-message .message-bubble {
+            background: white;
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 20px 20px 20px 5px;
+            display: inline-block;
+            max-width: 80%;
+            border: 2px solid #e9ecef;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sources {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #00a86b;
+            font-size: 0.9rem;
+        }
+
+        .source-item { margin-bottom: 5px; color: #666; }
+
+        .confidence-score {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #e9ecef;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+
+        .confidence-high { background: #d4edda; color: #155724; }
+        .confidence-medium { background: #fff3cd; color: #856404; }
+        .confidence-low { background: #f8d7da; color: #721c24; }
+
+        .input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .message-input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .send-button {
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #00a86b 0%, #228b22 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 168, 107, 0.4);
+        }
+
+        .send-button:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .loading.show { display: block; }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .sample-questions {
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .sample-questions h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .sample-question {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .sample-question:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .stats-bar {
+            padding: 15px 20px;
+            background: #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 4px solid #dc3545;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
+            }
+            
+            .header h1 { font-size: 2rem; }
+            
+            .input-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .message-input { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇹🇿 Tanzania Vision 2050 Assistant</h1>
+            <p>Your AI guide to understanding Tanzania's national development strategy</p>
+        </div>
+
+        <div class="stats-bar">
+            <span id="kb-status">Loading knowledge base...</span>
+            <span id="response-time"></span>
+        </div>
+
+        <div class="chat-container">
+            <div class="messages" id="messages">
+                <div class="message assistant-message">
+                    <div class="message-bubble">
+                        <strong>Welcome to the Tanzania Vision 2050 Assistant!</strong><br><br>
+                        I can help you understand Tanzania's comprehensive development strategy through 2050. Ask me about:
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Economic transformation pillars</li>
+                            <li>Social development goals</li>
+                            <li>Infrastructure development plans</li>
+                            <li>Governance and institutional reforms</li>
+                            <li>Environmental sustainability strategies</li>
+                        </ul>
+                        What would you like to know?
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Searching Tanzania Vision 2050 documents...</p>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    class="message-input" 
+                    id="messageInput" 
+                    placeholder="Ask about Tanzania's Vision 2050 strategy..."
+                    maxlength="500"
+                >
+                <button class="send-button" id="sendButton" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div class="sample-questions">
+            <h3>💡 Try these example questions:</h3>
+            <div class="sample-question" onclick="askSampleQuestion('What are the main economic pillars of Tanzania Vision 2050?')">
+                Economic Pillars
+            </div>
+            <div class="sample-question" onclick="askSampleQuestion('How does Tanzania plan to improve education by 2050?')">
+                Education Plans
+            </div>
+            <div class="sample-question" onclick="askSampleQuestion('What infrastructure developments are planned?')">
+                Infrastructure
+            </div>
+            <div class="sample-question" onclick="askSampleQuestion('What are the environmental sustainability goals?')">
+                Environment
+            </div>
+            <div class="sample-question" onclick="askSampleQuestion('How will governance be improved according to Vision 2050?')">
+                Governance
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8001/api/chat';
+        let isLoading = false;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadKBStats();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('messageInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        }
+
+        async function loadKBStats() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/kb-stats`);
+                const stats = await response.json();
+                
+                document.getElementById('kb-status').innerHTML = stats.status === 'active' 
+                    ? `📚 KB Active: ${stats.document_count} docs, ${stats.chunk_count} chunks`
+                    : `⚠️ KB Status: ${stats.status}`;
+            } catch (error) {
+                document.getElementById('kb-status').innerHTML = '❌ KB Status: Error';
+                console.error('Failed to load KB stats:', error);
+            }
+        }
+
+        function askSampleQuestion(question) {
+            document.getElementById('messageInput').value = question;
+            sendMessage();
+        }
+
+        async function sendMessage() {
+            if (isLoading) return;
+            
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            
+            if (!message) return;
+
+            messageInput.value = '';
+            addMessage(message, 'user');
+            setLoading(true);
+            
+            const startTime = Date.now();
+            
+            try {
+                const formData = new FormData();
+                formData.append('message', message);
+                
+                const response = await fetch(API_BASE_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const responseTime = ((Date.now() - startTime) / 1000).toFixed(2);
+                
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                
+                const data = await response.json();
+                addMessage(data.message, 'assistant', data.sources, data.confidence_score);
+                document.getElementById('response-time').textContent = `⚡ ${responseTime}s`;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                addErrorMessage('Sorry, I encountered an error while processing your question. Please try again.');
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        function addMessage(content, sender, sources = [], confidenceScore = null) {
+            const messagesContainer = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            let sourcesHtml = '';
+            if (sources?.length) {
+                sourcesHtml = '<div class="sources"><strong>📖 Sources:</strong><br>';
+                sources.forEach(source => {
+                    const relevance = (source.relevance_score * 100).toFixed(0);
+                    sourcesHtml += `<div class="source-item">• Page ${source.page} (Relevance: ${relevance}%)</div>`;
+                });
+                sourcesHtml += '</div>';
+            }
+            
+            let confidenceHtml = '';
+            if (confidenceScore !== null) {
+                const percentage = (confidenceScore * 100).toFixed(0);
+                let confidenceClass = 'confidence-low';
+                if (confidenceScore > 0.7) confidenceClass = 'confidence-high';
+                else if (confidenceScore > 0.4) confidenceClass = 'confidence-medium';
+                
+                confidenceHtml = `<span class="confidence-score ${confidenceClass}">Confidence: ${percentage}%</span>`;
+            }
+            
+            messageDiv.innerHTML = `
+                <div class="message-bubble">
+                    ${content}
+                    ${confidenceHtml}
+                    ${sourcesHtml}
+                </div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function addErrorMessage(content) {
+            const messagesContainer = document.getElementById('messages');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = content;
+            messagesContainer.appendChild(errorDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function setLoading(loading) {
+            isLoading = loading;
+            const loadingElement = document.getElementById('loading');
+            const sendButton = document.getElementById('sendButton');
+            const messageInput = document.getElementById('messageInput');
+            
+            if (loading) {
+                loadingElement.classList.add('show');
+                sendButton.disabled = true;
+                sendButton.textContent = 'Thinking...';
+                messageInput.disabled = true;
+            } else {
+                loadingElement.classList.remove('show');
+                sendButton.disabled = false;
+                sendButton.textContent = 'Send';
+                messageInput.disabled = false;
+                messageInput.focus();
+            }
+        }
+
+        window.addEventListener('load', () => {
+            document.getElementById('messageInput').focus();
+        });
+    </script>
+</body>
+</html>
