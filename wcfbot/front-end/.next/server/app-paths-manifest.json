@@ -1,0 +1,4 @@
+{
+  "/api/vts/route": "app/api/vts/route.js",
+  "/page": "app/page.js"
+}
