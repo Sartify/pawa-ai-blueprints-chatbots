@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Volume2, Paperclip, Mic, Send } from 'lucide-react';
 import CoatOfArmsImg from '../assets/images/Coat_of_arms_of_Tanzania.png'
-import PawaAiLogo from '../assets/images/apple-touch-icon.png'
+import PawaAiLogo from '../assets/pawa-logo.png'
 
 const ChatbotResponse = () => {
   const [inputValue, setInputValue] = useState("What are the top national parks to visit?");
@@ -17,16 +17,16 @@ const ChatbotResponse = () => {
       {/* Header */}
       <div className="bg-white border-b px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-<img src={CoatOfArmsImg} alt="Coat of Arms" className="w-10 h-10" />
+          <img src={CoatOfArmsImg} alt="Coat of Arms" className="w-10 h-10" />
           <div>
-            <h1 className="font-semibold text-gray-900">WIZARA</h1>
-            <p className="text-sm text-gray-600">YA MALIASILI</p>
-            <p className="text-sm text-gray-600">NA UTALII</p>
+            <h1 className="font-semibold text-gray-900 text-sm">WIZARA</h1>
+            <p className="font-semibold text-gray-900 text-sm">YA MALIASILI</p>
+            <p className="font-semibold text-gray-900 text-sm">NA UTALII</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <img src={PawaAiLogo} alt="Pawa AI Logo" className="w-8 h-8" />
-          <span className="font-medium text-gray-700">Pawa AI</span>
+          <img src={PawaAiLogo} alt="Pawa AI Logo" className="w-10 h-8" />
+          <span className="font-medium text-[#FFA200]">Pawa AI</span>
         </div>
       </div>
 
@@ -48,13 +48,13 @@ const ChatbotResponse = () => {
             <div className="flex items-center gap-2 mb-3">
               <span className="text-green-600 font-medium">Unforgettable Experience</span>
             </div>
-            
+
             <div className="bg-white rounded-lg p-6 border-l-4 border-orange-400 shadow-sm">
               <h3 className="font-semibold text-gray-900 mb-4">Top Cultural Sites in Tanzania</h3>
               <p className="text-gray-700 mb-4">
                 Tanzania is rich in culture and history, and some of the most popular cultural and heritage sites include:
               </p>
-              
+
               <ul className="space-y-4 text-gray-700">
                 <li>
                   <span className="font-medium">Stone Town (Zanzibar)</span> – A UNESCO World Heritage Site known for its winding alleys, spice markets, and Swahili architecture.
